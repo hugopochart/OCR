@@ -1,0 +1,26 @@
+
+# Makefile
+ 
+CC=gcc
+CPPFLAGS= 
+CFLAGS= -Wall -Wextra -std=c99 -O2 -o
+LDFLAGS=
+LDLIBS= -lm
+ 
+# you should at least create empty file
+# order to compile
+ 
+SRC= binarization.c som.c
+OBJ= ${SRC:.c=.o}
+DEP= ${SRC:.c=.d}
+ 
+all:
+ 
+-include ${DEP}
+ 
+binarization: ${OBJ}
+ 
+clean:
+	rm -f ${OBJ} ${DEP} listest
+ 
+# END
